@@ -1,0 +1,47 @@
+<html>
+
+<body>
+	<h1>
+		<a href=#play id=btnPlay>play</a>
+	</h1>
+	<h1>
+		<a href=#stop id=btnStop>stop</a>
+	</h1>
+
+</body>
+
+<script>
+var audio = new Audio('print.mp3');
+var btnPlay=document.getElementById('btnPlay');
+var btnStop=document.getElementById('btnStop');
+
+function stopAudio(){
+	audio.pause();
+	audio.currentTime = 0;
+}
+
+btnPlay.onclick=function(){
+	audio.play();
+}
+
+btnStop.onclick=function(){
+	stopAudio();
+}
+
+// Read keyboard //
+window.onkeydown=function(e){
+	
+	switch(e.keyCode){
+		
+		case 32://space bar to play
+			audio.play();
+			break;
+		
+		default:
+			console.log(e);
+			break;
+
+	}
+}
+
+</script>
